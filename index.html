@@ -80,20 +80,21 @@ No known issues.
 				</div>
 	  </div>
 <!--page two-->
-	<div data-role="page" id="pageone">
-		<div data-role="header">  
-	
-		<div data-role="footer" data-position="fixed">
-			<p>Page 1</p>
-		</div>
-	<!-- /footer -->
-	</div><!--/ end of page 1 -->
-			
-			
-		
-	
-
 	<div data-role="page" id="pagetwo">
+		<div data-role="header">
+			<h1>Question One</h1>
+		</div><!-- /header -->
+
+		<div data-role="content">
+			<p>Do you often cough when you exercise?</p>
+			<a href="#pagethree" onclick="asthamAdd();" data-role="button">Yes</a>
+			<a href="#pagethree" onclick="otherAdd();" data-role="button">No</a>
+		</div><!-- /content -->
+		<div data-role="footer">
+			<h1>Please select an answer to continue with the test.</h1>
+		</div><!-- /footer -->
+</div>
+	<div data-role="page" id="pagethree">
 		<div data-role="header">
 			<h1>Injury Characteristics</h1>
 		</div><!-- /header -->
