@@ -29,26 +29,33 @@ No known issues.
       <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
       <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-      
-      
-
      <script>
-	     
-	var count = 0;
-	     
-	function cAdd(){
-		count = count + 1;    
-     	}
-	     
-	function result(){
-		var resultText = document.getElementById("result");
-		resultText.innerHTML="Your concussion count is " + count  + " out of 22.";
+        var asthma_count = 0; <!--initial value for asthma_count-->
+        var other_count = 0; <!--initial value for other_count-->
+	var asthmaPercent = 0;  <!--initial value for asthmaPercent-->
+	var otherPercent = 0; <!--initial value for otherPercent-->
+<!--how cold and ashtma response is counted-->	      
+        function asthmaAdd(){
+            asthma_count = asthma_count + 1;
+        }
+        function otherAdd(){
+            other_count = other_count + 1;
+        }
+<!--equations for calculating percentages-->
+	function calculate_asthmaPercent(){
+		return (asthma_count/4)*100;
 	}
-	  
-	 function resetVars(){
-		count = 0; 
-	 }
-     </script>
+	function calculate_otherPercent(){
+		return (other_count/4)*100;
+	}
+<!--function for how to calculate results-->
+	function resultsoutput(){
+		asthmaPercent=calculate_asthmaPercent();
+		otherPercent=calculate_otherPercent();
+		var resultText = document.getElementById("results"); //should display in id named "pagesix"
+		resultText.innerHTML= "Probability it is exercise induced ashtma =" + asthmaPercent + "% <br> Probability it is not asthma =" + otherPercent + "%"
+	}
+  	</script>
    
     
   </head>
